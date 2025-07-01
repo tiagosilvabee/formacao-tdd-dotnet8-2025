@@ -1,128 +1,117 @@
-## 📆 Planejamento das Sessões – 30h / 15 Encontros (2h cada)
+## 🗂️ **Planejamento das 8 Sessões – Formação TDD com .NET 8**
 
-### 🔹 **Sessão 1 – Introdução ao Curso e Arquitetura de Software**  - 02/06/2025
+### **🧠 Sessão 1 — Fundamentos de Testes de Unidade e TDD**
 
-* Apresentação do curso, objetivos e metodologia
-* O que é Arquitetura de Software
-* Importância e papel do arquiteto
-* Estilos arquiteturais: visão geral (monolítico, microservices, serverless)
+**Objetivos:**
 
----
+* Apresentar o conceito de testes automatizados e sua importância.
+* Entender o ciclo TDD: Red → Green → Refactor.
+* Introduzir práticas de Baby Steps no desenvolvimento.
 
-### 🔹 **Sessão 2 – Estilos e Padrões Arquiteturais** - 04/06/2025
+**Atividades:**
 
-* Padrões arquiteturais: MVC, MVP, MVVM
-* Comparação entre estilos e aplicações
-* Discussão de casos reais
+* Discussão teórica e exemplos práticos.
+* Kata FizzBuzz guiado com TDD.
 
 ---
 
-### 🔹 **Sessão 3 – Princípios de Design: Visão Geral** - 11/06/2025
+### **🛠️ Sessão 2 — Configuração do Ambiente (.NET 8, xUnit, FluentAssertions)**
 
-* Introdução aos princípios SOLID
-* SRP – Single Responsibility Principle
-* OCP – Open/Closed Principle
-* LSP – Liskov Substitution Principle
-* ISP – Interface Segregation Principle
-* DIP – Dependency Inversion Principle
+**Objetivos:**
 
-* Exemplos práticos em código
+* Configurar o ambiente de desenvolvimento.
+* Criar o primeiro projeto de testes com xUnit e FluentAssertions.
+* Explorar a estrutura básica de um teste automatizado.
 
----
+**Atividades:**
 
-### 🔹 **Sessão 4 – Padrões Criacionais: Parte 1** - 16/06/2025
-
-* Singleton
-* Factory Method
-* Abstract Factory
+* Hands-on: criação de projeto `src/` + `tests/`
+* Testes simples com métodos matemáticos (ex: calculadora)
 
 ---
 
-### 🔹 **Sessão 5 – Padrões Criacionais: Parte 2** - 18/06/2025
+### **🧱 Sessão 3 — Design Orientado a Testes**
 
-* Builder
-* Prototype
-* Análise de trade-offs e aplicações práticas
+**Tópicos:**
 
----
+* Princípios de design: SRP, coesão, encapsulamento, acoplamento.
+* Como TDD influencia e melhora o design do sistema.
 
-### 🔹 **Sessão 6 – Padrões Estruturais: Parte 1** - 25/06/2025
+**Atividades:**
 
-* Adapter
-* Bridge
-* Composite
-
----
-
-### 🔹 **Sessão 7 – Padrões Estruturais: Parte 2** - 30/06/2025
-
-* Decorator
-* Facade
-* Flyweight
-* Proxy
+* Análise e refatoração de código mal projetado.
+* Implementação orientada a testes de uma classe com múltiplas responsabilidades.
+* Início de um domínio exemplo (ex: sistema de pedidos ou carrinho de compras).
 
 ---
 
-### 🔹 **Sessão 8 – Padrões Comportamentais: Parte 1** - 04/07/2025
+### **🧼 Sessão 4 — Escrevendo Testes Legíveis e Evitando Anti-patterns**
 
-* Observer
-* Strategy
-* Command
+**Tópicos:**
 
----
+* Boas práticas na escrita de testes: nome de testes, estrutura AAA (Arrange-Act-Assert), granularidade.
+* Anti-patterns comuns: testes frágeis, mocks excessivos, over-testing, etc.
 
-### 🔹 **Sessão 9 – Padrões Comportamentais: Parte 2** - 07/07/2025
+**Atividades:**
 
-* Chain of Responsibility
-* State
-* Visitor
-* Interpreter
+* Refatoração de testes ruins.
+* Exercício orientado: cobertura de cenários positivos e negativos com clareza.
 
 ---
 
-### 🔹 **Sessão 10 – Padrões Arquiteturais em Sistemas Modernos** - 09/07/2025
+### **🔌 Sessão 5 — Testes de Integração (API e Banco de Dados)**
 
-* DDD – Domain-Driven Design
-* Camadas (Layered Architecture)
-* Microservices Architecture
+**Tópicos:**
 
----
+* Diferenças entre teste de unidade e de integração.
+* Como testar controladores e serviços com dependências reais ou mockadas.
 
-### 🔹 **Sessão 11 – Arquiteturas Assíncronas e Event-Driven** - 14/07/2025
+**Atividades:**
 
-* Event-Driven Architecture
-* Patterns para sistemas distribuídos
-* Considerações de escalabilidade e resiliência
+* Criar testes de integração com um banco em memória (SQLite ou TestContainer).
+* Testar endpoints REST simples (GET/POST).
 
 ---
 
-### 🔹 **Sessão 12 – Preparação para Projeto Final** - 16/07/2025
+### **⚙️ Sessão 6 — Automação de Testes com GitHub Actions**
 
-* Apresentação dos desafios
-* Escolha dos temas e tecnologias
-* Planejamento das entregas
-* Formação dos grupos (se houver)
+**Tópicos:**
 
----
+* Introdução ao GitHub Actions.
+* Criação de workflow para execução de testes automáticos.
 
-### 🔹 **Sessão 13 – Desenvolvimento Assistido do Projeto Final** - 21/07/2025
+**Atividades:**
 
-* Hands-on supervisionado
-* Dúvidas e refinamento da aplicação dos padrões
-
----
-
-### 🔹 **Sessão 14 – Apresentação dos Projetos Finais** - 23/07/2025
-
-* Apresentações por grupo/aluno
-* Feedback e discussões
-* Conclusões e próximos passos
-
-### 🔹 **Sessão 15 – A definir** - 28/07/2025
-
-* ...
-
+* Criar `.github/workflows/ci.yml`
+* Validar testes em cada push/pull request.
+* Adicionar badge de status no README.
 
 ---
 
-> © MoOngy | Este repositório é parte do programa de formação contínua em Engenharia de Software.
+### **📊 Sessão 7 — Análise de Cobertura e Qualidade com SonarQube**
+
+**Tópicos:**
+
+* Instalar/configurar o Sonar Scanner para .NET.
+* Integração do SonarQube no CI via GitHub Actions.
+* Interpretação de métricas: cobertura, complexidade, duplicação, code smells.
+
+**Atividades:**
+
+* Executar análise do projeto e interpretar resultados no dashboard do SonarQube.
+* Resolver ao menos 1 alerta real.
+
+---
+
+### **🚀 Sessão 8 — Projeto Final + Integração Contínua**
+
+**Tópicos:**
+
+* Consolidar o aprendizado com um projeto de domínio completo.
+* Discutir os trade-offs do uso de TDD em diferentes contextos.
+
+**Atividades:**
+
+* Projeto: construir pequeno sistema (ex: API de tarefas, controle financeiro).
+* Testar, integrar e automatizar com CI/CD.
+* Rodar pipeline, avaliar cobertura e realizar demo final.
