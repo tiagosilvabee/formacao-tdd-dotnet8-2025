@@ -64,7 +64,89 @@ Siga o ciclo **Red → Green → Refactor** a cada nova funcionalidade.
 
 ---
 
-> Próxima sessão: Configuração do ambiente com .NET 8, xUnit e FluentAssertions
+> Próxima sessão: Configuração do ambiente com .NET 9, xUnit e FluentAssertions
 
 
 ### Código fonte de exemplo
+
+Exemplo bem didático em **C#**, já que é uma linguagem ótima pra mostrar **TDD** na prática com **xUnit**.
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
+FizzBuzzTDD/
+ ├── FizzBuzzTDD.csproj
+ ├── src/
+ │    └── FizzBuzz.cs
+ └── tests/
+      └── FizzBuzzTests.cs
+```
+
+---
+
+## 📝 Classe de Produção (`FizzBuzz.cs`)
+
+```csharp
+namespace FizzBuzzTDD;
+
+public class FizzBuzz
+{
+    public static string GetValue(int n)
+    {
+        if (n % 15 == 0)
+            return "FizzBuzz";
+        if (n % 3 == 0)
+            return "Fizz";
+        if (n % 5 == 0)
+            return "Buzz";
+
+        return n.ToString();
+    }
+}
+```
+
+---
+
+## 🧪 Classe de Testes (`FizzBuzzTests.cs`)
+
+```csharp
+using Xunit;
+using FizzBuzzTDD;
+
+namespace FizzBuzzTDD.Tests;
+
+public class FizzBuzzTests
+{
+    [Fact]
+    public void DeveRetornarNumeroQuandoNaoForMultiploDe3Ou5()
+    {
+        Assert.Equal("1", FizzBuzz.GetValue(1));
+    }
+
+    [Fact]
+    public void DeveRetornarFizzQuandoForMultiploDe3()
+    {
+        Assert.Equal("Fizz", FizzBuzz.GetValue(3));
+    }
+
+    [Fact]
+    public void DeveRetornarBuzzQuandoForMultiploDe5()
+    {
+        Assert.Equal("Buzz", FizzBuzz.GetValue(5));
+    }
+
+    [Fact]
+    public void DeveRetornarFizzBuzzQuandoForMultiploDe3e5()
+    {
+        Assert.Equal("FizzBuzz", FizzBuzz.GetValue(15));
+    }
+}
+```
+
+---
+
+👉 Com esse código, você consegue **rodar os testes primeiro (Red)**, depois implementar a lógica mínima (Green), e no fim fazer ajustes/refactor se quiser (por exemplo, remover duplicações, melhorar legibilidade etc.).
+
+

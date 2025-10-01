@@ -1,4 +1,4 @@
-## 🗂️ **Planejamento das 8 Sessões – Formação TDD com .NET 8**
+## 🗂️ **Planejamento das 8 Sessões – Formação TDD com .NET 9**
 
 ### **🧠 Sessão 1 — Fundamentos de Testes de Unidade e TDD**
 
@@ -15,7 +15,7 @@
 
 ---
 
-### **🛠️ Sessão 2 — Configuração do Ambiente (.NET 8, xUnit, FluentAssertions)**
+### **🛠️ Sessão 2 — Configuração do Ambiente (.NET 9, xUnit, FluentAssertions)**
 
 **Objetivos:**
 
