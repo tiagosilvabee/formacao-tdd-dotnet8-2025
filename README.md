@@ -1,6 +1,6 @@
 # Formação: Desenvolvimento Orientado por Testes (TDD) com .NET 9
 
-![.NET](https://img.shields.io/badge/.NET-8-512BD4?style=flat&logo=dotnet)
+![.NET](https://img.shields.io/badge/.NET-9-512BD4?style=flat&logo=dotnet)
 ![GitHub Actions](https://img.shields.io/badge/CI/CD-GitHub%20Actions-2088FF?style=flat&logo=githubactions)
 ![SonarQube](https://img.shields.io/badge/Quality-SonarQube-4E9BCD?style=flat&logo=sonarqube)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
@@ -33,7 +33,7 @@ O objetivo é capacitar desenvolvedores a escrever código mais confiável, test
 
 ## 🛠️ Tecnologias e Ferramentas
 
-- [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)  
+- [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)  
 - [xUnit](https://xunit.net/) — Framework de testes unitários  
 - [FluentAssertions](https://fluentassertions.com/) — Biblioteca para assertivas legíveis  
 - [GitHub Actions](https://github.com/features/actions) — Pipelines CI/CD  
