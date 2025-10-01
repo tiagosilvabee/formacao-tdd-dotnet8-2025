@@ -38,7 +38,7 @@ O objetivo é capacitar desenvolvedores a escrever código mais confiável, test
 - [FluentAssertions](https://fluentassertions.com/) — Biblioteca para assertivas legíveis  
 - [GitHub Actions](https://github.com/features/actions) — Pipelines CI/CD  
 - [SonarQube](https://www.sonarqube.org/) — Análise contínua de qualidade e cobertura  
-- VS Code / Visual Studio  
+- [VS Code / Visual Studio](https://code.visualstudio.com/)  
 
 ---
 
