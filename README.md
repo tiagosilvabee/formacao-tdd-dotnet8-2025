@@ -43,7 +43,10 @@ O objetivo é capacitar desenvolvedores a escrever código mais confiável, test
 
 ```plaintext
 ├── src/                   # Código-fonte dos exemplos e projeto final
-├── tests/                 # Projetos de testes unitários e integração
+    ├── Aula ##
+        ├── .Application/  # Código-fonte da aplicação 
+        ├── .tests/        # Projetos de testes unitários e integração
 ├── .github/workflows/     # Configurações dos pipelines do GitHub Actions
 ├── docs/                  # Materiais de apoio (slides, planos de aula)
 └── README.md              # Documentação do projeto
+```
