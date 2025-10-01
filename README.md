@@ -1,4 +1,4 @@
-# Formação: Desenvolvimento Orientado por Testes (TDD) com .NET 8
+# Formação: Desenvolvimento Orientado por Testes (TDD) com .NET 9
 
 ![.NET](https://img.shields.io/badge/.NET-8-512BD4?style=flat&logo=dotnet)
 ![GitHub Actions](https://img.shields.io/badge/CI/CD-GitHub%20Actions-2088FF?style=flat&logo=githubactions)
@@ -9,7 +9,7 @@
 
 ## 📖 Sobre o Projeto
 
-Este repositório reúne os materiais, exemplos e exercícios práticos da formação **Desenvolvimento Orientado por Testes (TDD)** aplicada a projetos em **.NET 8**. O foco está no ciclo Red-Green-Refactor, testes de unidade, testes de integração, design orientado a testes, automação com GitHub Actions e análise de qualidade com SonarQube.
+Este repositório reúne os materiais, exemplos e exercícios práticos da formação **Desenvolvimento Orientado por Testes (TDD)** aplicada a projetos em **.NET 9**. O foco está no ciclo Red-Green-Refactor, testes de unidade, testes de integração, design orientado a testes, automação com GitHub Actions e análise de qualidade com SonarQube.
 
 O objetivo é capacitar desenvolvedores a escrever código mais confiável, testável e com qualidade consistente, aplicando boas práticas do TDD.
 
@@ -18,7 +18,7 @@ O objetivo é capacitar desenvolvedores a escrever código mais confiável, test
 ## 📚 Conteúdos Abordados
 
 1. Fundamentos de testes de unidade e TDD  
-2. Configuração do ambiente (.NET 8, xUnit, FluentAssertions)  
+2. Configuração do ambiente (.NET 9, xUnit, FluentAssertions)  
 3. Design orientado a testes: coesão, responsabilidade única, encapsulamento e acoplamento  
 4. Escrevendo testes legíveis e evitando anti-patterns  
 5. Testes de integração (API e banco de dados)  
@@ -30,7 +30,7 @@ O objetivo é capacitar desenvolvedores a escrever código mais confiável, test
 
 ## 🛠️ Tecnologias e Ferramentas
 
-- [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)  
+- [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)  
 - [xUnit](https://xunit.net/) — Framework de testes unitários  
 - [FluentAssertions](https://fluentassertions.com/) — Biblioteca para assertivas legíveis  
 - [GitHub Actions](https://github.com/features/actions) — Pipelines CI/CD  
