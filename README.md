@@ -26,7 +26,7 @@ O objetivo é capacitar desenvolvedores a escrever código mais confiável, test
 4. [Escrevendo testes legíveis e evitando anti-patterns](/docs/4%20-%20Escrevendo%20Testes%20Legíveis%20e%20Evitando%20Anti-patterns.md)  
 5. [Testes de integração (API e banco de dados)](/docs/5%20-%20Testes%20de%20Integração.md)  
 6. [Automação de testes com GitHub Actions](/docs/6%20-%20Automação%20de%20Testes%20com%20GitHub%20Actions.md)  
-7. [Análise de cobertura e qualidade com SonarQube](/docs/7%20-%20Análise%20de%20Cobertura%20e%20Qualidade%20com%20SonarQube.md)  
+7. [Análise de cobertura e qualidade com SonarCloud](/docs/7%20-%20Análise%20de%20Cobertura%20e%20Qualidade%20com%20SonarQube.md)  
 8. [Projeto final com integração contínua e entrega contínua (CI/CD)](/docs/8%20-%20Projeto%20Final%20+%20Integração%20Contínua.md)  
 
 ---
