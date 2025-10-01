@@ -17,14 +17,17 @@ O objetivo é capacitar desenvolvedores a escrever código mais confiável, test
 
 ## 📚 Conteúdos Abordados
 
-1. Fundamentos de testes de unidade e TDD  
-2. Configuração do ambiente (.NET 9, xUnit, FluentAssertions)  
-3. Design orientado a testes: coesão, responsabilidade única, encapsulamento e acoplamento  
-4. Escrevendo testes legíveis e evitando anti-patterns  
-5. Testes de integração (API e banco de dados)  
-6. Automação de testes com GitHub Actions  
-7. Análise de cobertura e qualidade com SonarQube  
-8. Projeto final com integração contínua e entrega contínua (CI/CD)  
+
+
+0. [Planejamento](/docs/0%20-%20Planejamento.md)
+1. [Fundamentos de testes de unidade e TDD](/docs/1%20-%20Fundamentos%20de%20testes%20de%20unidade%20e%20TDD.md)  
+2. [Configuração do ambiente (.NET 9, xUnit, FluentAssertions)](/docs/2%20-%20Configuração%20do%20Ambiente.md) 
+3. [Design orientado a testes: coesão, responsabilidade única, encapsulamento e acoplamento](/docs/3%20-%20Design%20Orientado%20a%20Testes.md)  
+4. [Escrevendo testes legíveis e evitando anti-patterns](/docs/4%20-%20Escrevendo%20Testes%20Legíveis%20e%20Evitando%20Anti-patterns.md)  
+5. [Testes de integração (API e banco de dados)](/docs/5%20-%20Testes%20de%20Integração.md)  
+6. [Automação de testes com GitHub Actions](/docs/6%20-%20Automação%20de%20Testes%20com%20GitHub%20Actions.md)  
+7. [Análise de cobertura e qualidade com SonarQube](/docs/7%20-%20Análise%20de%20Cobertura%20e%20Qualidade%20com%20SonarQube.md)  
+8. [Projeto final com integração contínua e entrega contínua (CI/CD)](/docs/8%20-%20Projeto%20Final%20+%20Integração%20Contínua.md)  
 
 ---
 
