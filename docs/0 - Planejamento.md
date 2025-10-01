@@ -115,3 +115,7 @@
 * Projeto: construir pequeno sistema (ex: API de tarefas, controle financeiro).
 * Testar, integrar e automatizar com CI/CD.
 * Rodar pipeline, avaliar cobertura e realizar demo final.
+
+
+---
+Moongy 2025 - Todos os direitos reservados
