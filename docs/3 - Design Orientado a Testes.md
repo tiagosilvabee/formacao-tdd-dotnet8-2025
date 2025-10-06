@@ -44,6 +44,8 @@
 * Refatore constantemente **após cada teste passar**.
 * Evite designs rígidos: testes te mostram onde é difícil alterar código.
 
+![alt text](image.png)
+
 ---
 
 ## 🛠️ Exercícios Práticos
