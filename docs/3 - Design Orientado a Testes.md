@@ -48,9 +48,7 @@
 
 ---
 
-Beleza! Vou te passar um **tutorial simples de xUnit** em C# para você começar a criar testes automatizados de forma rápida. Vamos usar o .NET 9 como base.
-
----
+## 🛠️ Tutorial Prático com xUnit e .NET 9
 
 ## 1️⃣ Criar o projeto de teste
 
@@ -171,12 +169,6 @@ Isso permite testar **vários cenários com uma única função**.
   * `Assert.True(condition)`
   * `Assert.Throws<ExceptionType>(() => method())`
 
----
-
-Se você quiser, posso montar um **mini-projeto completo de exemplo**, com `Calculadora`, testes xUnit, e até um setup de CI no GitHub Actions pra rodar automaticamente os testes.
-
-Quer que eu faça isso?
-
 
 ---
 
@@ -191,14 +183,6 @@ Quer que eu faça isso?
 2. Implementar **interfaces e injeção de dependência** para permitir fácil teste de serviços de notificação (email, SMS).
 
 3. Bonus: Integrar o projeto a um pipeline **Azure DevOps** para rodar os testes automaticamente.
-
----
-
-## 📝 Técnicas e Instrumentos de Avaliação
-
-* **Pair Programming:** trabalhar em pares nos exercícios TDD.
-* **Code Review:** revisar código dos colegas, focando em design guiado por testes.
-* **Automação de Testes:** verificar se todos os testes passam no pipeline DevOps.
 
 ---
 
