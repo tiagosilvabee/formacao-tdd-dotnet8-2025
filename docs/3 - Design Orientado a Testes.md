@@ -48,6 +48,138 @@
 
 ---
 
+Beleza! Vou te passar um **tutorial simples de xUnit** em C# para você começar a criar testes automatizados de forma rápida. Vamos usar o .NET 9 como base.
+
+---
+
+## 1️⃣ Criar o projeto de teste
+
+No terminal, vá para a pasta do seu projeto ou crie uma nova:
+
+```bash
+dotnet new console -n ProjetoExemplo
+cd ProjetoExemplo
+```
+
+Crie o projeto de testes:
+
+```bash
+dotnet new xunit -n ProjetoExemplo.Tests
+```
+
+Adicione referência ao projeto principal:
+
+```bash
+cd ProjetoExemplo.Tests
+dotnet add reference ../ProjetoExemplo/ProjetoExemplo.csproj
+```
+
+---
+
+## 2️⃣ Estrutura básica de um teste
+
+No `ProjetoExemplo.Tests`, abra o arquivo `UnitTest1.cs` ou crie um novo:
+
+```csharp
+using Xunit;
+using ProjetoExemplo; // namespace do seu projeto principal
+
+namespace ProjetoExemplo.Tests
+{
+    public class CalculadoraTests
+    {
+        [Fact]
+        public void Soma_DeveRetornarValorCorreto()
+        {
+            // Arrange
+            var calc = new Calculadora();
+            int a = 5;
+            int b = 3;
+
+            // Act
+            int resultado = calc.Somar(a, b);
+
+            // Assert
+            Assert.Equal(8, resultado);
+        }
+    }
+}
+```
+
+No projeto principal (`ProjetoExemplo`), crie a classe `Calculadora.cs`:
+
+```csharp
+namespace ProjetoExemplo
+{
+    public class Calculadora
+    {
+        public int Somar(int x, int y)
+        {
+            return x + y;
+        }
+    }
+}
+```
+
+---
+
+## 3️⃣ Rodar os testes
+
+No terminal, dentro do projeto de testes:
+
+```bash
+dotnet test
+```
+
+Se estiver tudo certo, vai aparecer algo como:
+
+```
+Passed!  - Failed: 0, Passed: 1, Skipped: 0
+```
+
+---
+
+## 4️⃣ Usando `[Theory]` para testes parametrizados
+
+```csharp
+public class CalculadoraTests
+{
+    [Theory]
+    [InlineData(2, 3, 5)]
+    [InlineData(5, 7, 12)]
+    [InlineData(-1, 1, 0)]
+    public void Soma_DeveFuncionarComVariosValores(int a, int b, int esperado)
+    {
+        var calc = new Calculadora();
+        int resultado = calc.Somar(a, b);
+        Assert.Equal(esperado, resultado);
+    }
+}
+```
+
+Isso permite testar **vários cenários com uma única função**.
+
+---
+
+✅ Dicas rápidas:
+
+* `[Fact]` → teste único.
+* `[Theory]` → teste com múltiplos inputs (`[InlineData]` ou `[MemberData]`).
+* `Assert` → várias opções:
+
+  * `Assert.Equal(expected, actual)`
+  * `Assert.True(condition)`
+  * `Assert.Throws<ExceptionType>(() => method())`
+
+---
+
+Se você quiser, posso montar um **mini-projeto completo de exemplo**, com `Calculadora`, testes xUnit, e até um setup de CI no GitHub Actions pra rodar automaticamente os testes.
+
+Quer que eu faça isso?
+
+
+---
+
 ## 🛠️ Exercícios Práticos
 
 1. Criar uma **classe de gerenciamento de contas bancárias** com TDD.
