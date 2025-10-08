@@ -390,6 +390,15 @@ BankingApp/
 └─ BankingApp.sln
 ```
 
+```bash
+dotnet new sln -n BankingApp
+dotnet new console -n BankingApp.Console
+dotnet new xunit -n BankingApp.Tests
+dotnet sln add .\BankingApp.Console\ 
+dotnet sln add BankingApp.Tests/BankingApp.Tests.csproj
+dotnet add .\BankingApp.Tests\ reference .\BankingApp.Console\ 
+```
+
 ---
 
 ## **1️⃣ TDD: Criando a classe BankAccount**
