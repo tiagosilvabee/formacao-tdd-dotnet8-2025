@@ -261,6 +261,134 @@ steps:
 
 ---
 
+## Exemplos com MOQ
+
+* ✅ **Testes de integração** — com banco **SQLite em memória**, endpoints reais e contexto de dados.
+* 🧪 **Testes unitários com Moq** — isolando dependências, simulando repositórios e serviços.
+
+---
+
+### 🧱 Estrutura final do projeto
+
+```
+TestIntegracao_Sessao5/
+│
+├── src/
+│   ├── MinimalApiApp/
+│   │   ├── Program.cs
+│   │   ├── Models/
+│   │   │   └── Product.cs
+│   │   ├── Data/
+│   │   │   └── AppDbContext.cs
+│   │   ├── Services/
+│   │   │   └── ProductService.cs
+│   │   └── Repositories/
+│   │       ├── IProductRepository.cs
+│   │       └── ProductRepository.cs
+│
+├── tests/
+│   ├── MinimalApiApp.Tests.Integration/
+│   │   └── ProductIntegrationTests.cs
+│   └── MinimalApiApp.Tests.Unit/
+│       └── ProductServiceTests.cs   👈 com Moq
+│
+└── .github/workflows/
+    └── dotnet-build-test.yml
+```
+
+---
+
+### 🧩 Exemplo: `ProductService.cs`
+
+```csharp
+using MinimalApiApp.Models;
+using MinimalApiApp.Repositories;
+
+namespace MinimalApiApp.Services;
+
+public class ProductService
+{
+    private readonly IProductRepository _repo;
+
+    public ProductService(IProductRepository repo)
+    {
+        _repo = repo;
+    }
+
+    public async Task<IEnumerable<Product>> GetAllAsync() => await _repo.GetAllAsync();
+
+    public async Task<Product?> GetByIdAsync(int id) => await _repo.GetByIdAsync(id);
+
+    public async Task<Product> CreateAsync(Product product)
+    {
+        if (string.IsNullOrWhiteSpace(product.Name))
+            throw new ArgumentException("Nome do produto é obrigatório");
+
+        return await _repo.AddAsync(product);
+    }
+}
+```
+
+---
+
+### 🧪 Exemplo: Teste com **Moq** → `ProductServiceTests.cs`
+
+```csharp
+using MinimalApiApp.Models;
+using MinimalApiApp.Repositories;
+using MinimalApiApp.Services;
+using Moq;
+
+namespace MinimalApiApp.Tests.Unit;
+
+public class ProductServiceTests
+{
+    private readonly Mock<IProductRepository> _mockRepo;
+    private readonly ProductService _service;
+
+    public ProductServiceTests()
+    {
+        _mockRepo = new Mock<IProductRepository>();
+        _service = new ProductService(_mockRepo.Object);
+    }
+
+    [Fact]
+    public async Task CreateAsync_DeveLancarExcecao_QuandoNomeForVazio()
+    {
+        var product = new Product { Name = "" };
+        await Assert.ThrowsAsync<ArgumentException>(() => _service.CreateAsync(product));
+    }
+
+    [Fact]
+    public async Task CreateAsync_DeveChamarAddAsync_UmaVez()
+    {
+        var product = new Product { Name = "Teclado" };
+        _mockRepo.Setup(r => r.AddAsync(It.IsAny<Product>())).ReturnsAsync(product);
+
+        var result = await _service.CreateAsync(product);
+
+        _mockRepo.Verify(r => r.AddAsync(It.IsAny<Product>()), Times.Once);
+        Assert.Equal("Teclado", result.Name);
+    }
+
+    [Fact]
+    public async Task GetAllAsync_DeveRetornarListaDeProdutos()
+    {
+        var produtos = new List<Product> { new() { Id = 1, Name = "Mouse" } };
+        _mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync(produtos);
+
+        var result = await _service.GetAllAsync();
+
+        Assert.Single(result);
+        Assert.Equal("Mouse", result.First().Name);
+    }
+}
+```
+
+
+---
+
+
 ## ⏱️ Tempo
 
 * **2h30 (aula prática e teórica):**

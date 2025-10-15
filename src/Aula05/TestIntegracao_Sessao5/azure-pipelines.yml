@@ -1,0 +1,35 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Instalar .NET 9 SDK'
+  inputs:
+    packageType: 'sdk'
+    version: '9.x'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Restaurar dependências'
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Compilar solução'
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Executar testes de integração'
+  inputs:
+    command: 'test'
+    projects: '**/*.Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
