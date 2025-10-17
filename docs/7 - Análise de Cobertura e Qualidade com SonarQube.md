@@ -1,3 +1,7 @@
+Perfeito 😎 — aqui está a **versão atualizada da Sessão 7**, agora **incluindo a proposta sobre Quality Gates e Pull Request Decoration**, tudo já alinhado com o uso do **SonarCloud + GitHub Actions + .NET 9**.
+
+---
+
 # 📊 Sessão 7 — Análise de Cobertura e Qualidade com SonarCloud
 
 ## 🎯 Objetivos
@@ -6,6 +10,7 @@
 * Configurar o **SonarScanner for .NET** e integrá-lo ao **GitHub Actions**.
 * Interpretar métricas de **coverage**, **complexidade**, **duplicação** e **code smells**.
 * Resolver um alerta real com base na análise.
+* Compreender e aplicar **Quality Gates** e **Pull Request Decoration** no fluxo de CI/CD.
 
 ---
 
@@ -19,24 +24,24 @@ Ele fornece:
 * **Code Smells**, **Bugs** e **Vulnerabilidades**
 * **Cobertura de testes**
 * **Duplicações e complexidade**
-* **Quality Gates** para impedir merges com baixa qualidade
+* **Quality Gates** que bloqueiam merges com baixa qualidade
 
 ---
 
 ### ⚙️ Integração com o GitHub
 
-1. **Crie uma conta no [SonarCloud](https://sonarcloud.io/)** e conecte via GitHub.
-2. **Importe seu repositório** (ex: `github-actions-ci`).
-3. **Obtenha o “Project Key”** — algo como `seu-org_github-actions-ci`.
+1. Crie uma conta no [SonarCloud](https://sonarcloud.io/) e conecte via **GitHub**.
+2. Importe seu repositório (ex: `github-actions-ci`).
+3. Obtenha o **Project Key** — algo como `seu-org_github-actions-ci`.
 4. Vá em **My Account > Security** e gere um **token** (ex: `SONAR_TOKEN`).
-5. No GitHub, adicione os secrets:
+5. No repositório GitHub, adicione os **Secrets**:
 
    * `SONAR_TOKEN`
    * `SONAR_HOST_URL` → `https://sonarcloud.io`
 
 ---
 
-### 🧩 Configurando o CI no GitHub Actions
+### 🧩 Workflow com SonarCloud
 
 Edite `.github/workflows/ci.yml` para incluir o **SonarCloud Scan**:
 
@@ -83,7 +88,7 @@ jobs:
           dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
 ```
 
-> 🧩 Substitua `seu-org` e `seu-org_github-actions-ci` pelos valores reais da sua conta no SonarCloud.
+> Substitua `seu-org` e `seu-org_github-actions-ci` pelos valores reais da sua conta.
 
 ---
 
@@ -100,16 +105,52 @@ jobs:
 
 ## 🧠 Atividades
 
-1. **Executar o pipeline** e aguardar o upload para o SonarCloud.
-2. **Abrir o dashboard** e interpretar as métricas do projeto.
-3. **Corrigir ao menos 1 alerta real** (ex: duplicação, método longo, variável não usada).
-4. **Reexecutar o pipeline** e confirmar a melhoria na *Quality Gate*.
+1. Executar o pipeline e aguardar o upload para o **SonarCloud**.
+2. Abrir o dashboard e interpretar as métricas do projeto.
+3. Corrigir ao menos **1 alerta real** (ex: duplicação, variável não usada, método longo).
+4. Reexecutar o pipeline e confirmar a melhoria na *Quality Gate*.
+
+---
+
+## 🛡️ Quality Gates e Pull Request Decoration
+
+### 🧩 Quality Gates
+
+Os **Quality Gates** são conjuntos de critérios que definem se o código está "saudável" o suficiente para ser integrado.
+Exemplo de critérios padrão do SonarCloud:
+
+* Nenhum **bug** ou **vulnerabilidade crítica**.
+* Cobertura mínima de **80%** no novo código.
+* Nenhuma duplicação em novas linhas.
+
+Se o projeto **falhar** em algum desses critérios, a *Quality Gate* é marcada como ❌ “Failed” — e isso pode ser usado para **bloquear merges**.
+
+---
+
+### 💬 Pull Request Decoration
+
+Quando o projeto está integrado com o GitHub:
+
+* O SonarCloud **comenta automaticamente** no Pull Request.
+* Mostra as métricas do novo código: bugs, code smells, cobertura, duplicações.
+* Indica se o PR **passa ou falha** na *Quality Gate*.
+
+🔧 Para ativar:
+
+1. No SonarCloud, vá em **Administration → Analysis Method → GitHub Actions**.
+2. Ative **Decorate Pull Requests**.
+3. Verifique se o token `GITHUB_TOKEN` tem permissões de leitura/escrita em PRs (padrão).
+
+Assim, cada PR exibirá algo como:
+
+> ✅ Quality Gate Passed — 85% coverage, 0 code smells
+> ❌ Quality Gate Failed — 65% coverage (mínimo 80%)
 
 ---
 
 ### 🪶 Badge de Status no `README.md`
 
-Adicione o badge de qualidade no seu `README.md` (troque `seu-org` e `github-actions-ci` pelos reais):
+Adicione os badges no `README.md`:
 
 ```markdown
 ![Build](https://github.com/seu-org/github-actions-ci/actions/workflows/ci.yml/badge.svg)
@@ -122,10 +163,14 @@ Adicione o badge de qualidade no seu `README.md` (troque `seu-org` e `github-act
 
 Ao final da sessão, o repositório terá:
 
-* Workflow CI completo (.NET 9 + testes + cobertura + SonarCloud).
-* Badge de *Build* e *Quality Gate* no README.
-* Dashboard público no SonarCloud mostrando a qualidade do código.
-
+* CI completo (.NET 9 + Testes + SonarCloud).
+* Badges de **Build** e **Quality Gate** no `README.md`.
+* Integração de **Pull Request Decoration** no SonarCloud.
+* Dashboard público com **Quality Gates ativas**.
 
 ---
-Moongy 2025 - Todos os direitos reservados
+
+## 💬 Fechamento
+
+> “Testar é garantir que o código funcione.
+> Medir é garantir que ele continue saudável.” 🧠
