@@ -88,17 +88,17 @@
 
 ---
 
-### **📊 Sessão 7 — Análise de Cobertura e Qualidade com SonarQube**
+### **📊 Sessão 7 — Análise de Cobertura e Qualidade com SonarCloud**
 
 **Tópicos:**
 
 * Instalar/configurar o Sonar Scanner para .NET.
-* Integração do SonarQube no CI via GitHub Actions.
+* Integração do SonarCloud no CI via GitHub Actions.
 * Interpretação de métricas: cobertura, complexidade, duplicação, code smells.
 
 **Atividades:**
 
-* Executar análise do projeto e interpretar resultados no dashboard do SonarQube.
+* Executar análise do projeto e interpretar resultados no dashboard do SonarCloud.
 * Resolver ao menos 1 alerta real.
 
 ---
