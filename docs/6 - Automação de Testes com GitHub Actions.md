@@ -217,7 +217,7 @@ Este projeto demonstra um pipeline básico de CI com GitHub Actions, executando 
   * 30 min — Exercícios e integração com README.
 
 ---
-
+..
 ## 💬 Fechamento
 
 > “Automatizar é libertar o desenvolvedor da repetição.
