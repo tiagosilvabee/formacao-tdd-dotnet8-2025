@@ -1,7 +1,3 @@
-Perfeito 😎 — aqui está a **versão atualizada da Sessão 7**, agora **incluindo a proposta sobre Quality Gates e Pull Request Decoration**, tudo já alinhado com o uso do **SonarCloud + GitHub Actions + .NET 9**.
-
----
-
 # 📊 Sessão 7 — Análise de Cobertura e Qualidade com SonarCloud
 
 ## 🎯 Objetivos
