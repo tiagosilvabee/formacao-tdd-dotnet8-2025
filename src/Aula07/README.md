@@ -1,21 +1,59 @@
+# 📊 SonarCloud CI Sample (.NET 9 + GitHub Actions)
 
-# 🧮 GitHub Actions CI + SonarCloud (.NET 9)
+Este repositório demonstra um pipeline de integração contínua completo com **SonarCloud**, **.NET 9** e **GitHub Actions**.
+
+---
+
+## 🧩 Objetivos
+
+* Build e testes automatizados.
+* Análise de qualidade e cobertura de código no SonarCloud.
+* Exibição dos *badges* de qualidade diretamente no README.
+
+---
+
+## 🚀 CI Status
 
 ![Build](https://github.com/seu-org/github-actions-ci/actions/workflows/ci.yml/badge.svg)
 ![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=seu-org_github-actions-ci&metric=alert_status)
 
-Projeto exemplo de integração contínua com análise de qualidade via **SonarCloud** e cobertura de testes automatizada.
+> 🧩 Substitua `seu-org` e `github-actions-ci` pelos valores reais da sua conta no SonarCloud e repositório no GitHub.
 
-## 🚀 Tecnologias
-- .NET 9
-- xUnit
-- GitHub Actions
-- SonarCloud
+---
 
-## ⚙️ Executar localmente
+## 💡 Proposta Prática
+
+1. Configure o **SonarCloud** e adicione os *secrets* `SONAR_TOKEN` e `SONAR_HOST_URL` no GitHub.
+2. Execute o pipeline completo (build + testes + análise SonarCloud).
+3. Corrija pelo menos **1 problema real** reportado (duplicação, *code smell* ou complexidade).
+4. Reexecute o pipeline e verifique a melhoria na *Quality Gate*.
+5. Atualize este README com um breve comentário sobre a evolução da qualidade.
+
+---
+
+## 🧱 Estrutura do Projeto
+
+```
+.github/workflows/ci.yml  → Pipeline CI com análise SonarCloud
+src/SampleApp/            → Aplicação exemplo (.NET 9)
+tests/SampleApp.Tests/    → Testes unitários com cobertura
+```
+
+---
+
+## 🧩 Execução local
 
 ```bash
-dotnet restore
 dotnet build
 dotnet test --collect:"XPlat Code Coverage"
 ```
+
+---
+
+## 🪶 Resultado Esperado
+
+Ao final, o aluno terá:
+
+* Workflow CI completo (.NET 9 + SonarCloud).
+* Dashboard público no SonarCloud.
+* Badges de *Build* e *Quality Gate* no README.
