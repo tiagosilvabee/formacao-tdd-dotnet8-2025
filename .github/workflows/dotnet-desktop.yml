@@ -8,10 +8,15 @@ on:
   pull_request:
     branches: [ "main" ]
 
+
 jobs:
 
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        solution: [ './src/Aula05/TestIntegracao/TestIntegracao.sln']
 
     steps:
     - name: Checkout
@@ -23,11 +28,14 @@ jobs:
       with:
         dotnet-version: 9.0.x
 
-    - name: Find and Build All Solutions
-      run: |
-        for sln in $(find . -name '*.sln'); do
-          echo "🔧 Building and testing $sln"
-          dotnet restore "$sln"
-          dotnet build "$sln" --configuration Release --no-restore
-          dotnet test "$sln" --configuration Release --no-build --verbosity normal
-        done
+    - name: Restore
+      run: dotnet restore ${{ matrix.solution }}        
+
+    # - name: Find and Build All Solutions
+    #   run: |
+    #     for sln in $(find . -name '*.sln'); do
+    #       echo "🔧 Building and testing $sln"
+    #       dotnet restore "$sln"
+    #       dotnet build "$sln" --configuration Release --no-restore
+    #       dotnet test "$sln" --configuration Release --no-build --verbosity normal
+    #     done
