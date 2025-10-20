@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        solution: [ './src/Aula05/TestIntegracao/TestIntegracao.sln']
+        solution: ['./src/Aula01/CarrinhoCompras/CarrinhoCompras.sln', './src/Aula02/src/CalculatorSample/TDDExample.sln', './src/Aula02/src/CICDWithTestsSample/MoongyTDD.sln', './src/Aula03/src/BankingApp.sln', './src/Aula04/src/Aula04.sln', './src/Aula05/Aula05.sln', './src/Aula05/MoqSample/MoqSample.sln', './src/Aula05/TestIntegracao/TestIntegracao.sln']
 
     steps:
     - name: Checkout
@@ -31,11 +31,8 @@ jobs:
     - name: Restore
       run: dotnet restore ${{ matrix.solution }}        
 
-    # - name: Find and Build All Solutions
-    #   run: |
-    #     for sln in $(find . -name '*.sln'); do
-    #       echo "🔧 Building and testing $sln"
-    #       dotnet restore "$sln"
-    #       dotnet build "$sln" --configuration Release --no-restore
-    #       dotnet test "$sln" --configuration Release --no-build --verbosity normal
-    #     done
+    - name: Build
+      run: dotnet build ${{ matrix.solution }} --configuration Release --no-restore
+
+    - name: Test
+      run: dotnet test ${{ matrix.solution }} --configuration Release --no-build --verbosity normal
