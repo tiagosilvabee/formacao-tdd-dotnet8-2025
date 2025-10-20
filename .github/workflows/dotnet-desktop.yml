@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        solution: [ '/src/Aula01/CarrinhoCompras.sln', '/src/Aula02/TDDExample.sln', '/src/Aula05/MoqSample.sln']
+        solution: [ './src/Aula01/CarrinhoCompras.sln', './src/Aula02/TDDExample.sln', './src/Aula05/MoqSample.sln']
 
     steps:
     - name: Checkout
