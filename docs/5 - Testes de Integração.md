@@ -407,4 +407,12 @@ public class ProductServiceTests
 > Enquanto os testes unitários dizem “minha parte está certa”, os de integração perguntam “e se juntarmos tudo, ainda funciona?” 💡
 
 ---
+
+## Referências
+
+https://learn.microsoft.com/pt-br/shows/visual-studio-toolbox/unit-testing-moq-framework
+https://www.codemag.com/Article/2305041/Using-Moq-A-Simple-Guide-to-Mocking-for-.NET
+https://github.com/devlooped/moq
+
+---
 Moongy 2025 - Todos os direitos reservados
