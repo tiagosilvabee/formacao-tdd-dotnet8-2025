@@ -11,7 +11,7 @@ public class CarrinhoCompras
     }
     public List<Produto> Produtos { get; set; }
 
-    public Produto EncontraMaisBarato3()
+    public Produto EncontraMaisBarato()
     {
         Produto produtoMaisBarato = null;
         foreach (var item in Produtos)
