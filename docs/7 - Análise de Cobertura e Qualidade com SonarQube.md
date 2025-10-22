@@ -170,3 +170,99 @@ Ao final da sessão, o repositório terá:
 
 > “Testar é garantir que o código funcione.
 > Medir é garantir que ele continue saudável.” 🧠
+
+
+---
+
+>NOTA:
+
+``` 
+R$ 72 milhões. Por hora.
+
+Esse foi o custo da AWS ontem. Só pra Amazon.
+
+Snapchat fora. Venmo travado. Lloyds Bank inacessível. United Airlines atrasando voos. 
+
+Mais de 1.000 empresas impactadas. 
+
+Estimativa de prejuízo: centenas de bilhões de dólares.
+
+A causa? Um erro de DNS no subsistema de monitoramento de load balancers da região US-EAST-1 em Virginia.
+
+Um erro. Uma região. Metade da internet no chão.
+
+E agora vem a pergunta que nenhum board quer ouvir: qual é o seu plano B quando a AWS cai?
+
+Porque se a resposta for "esperar a AWS voltar", você não tem plano B.
+
+Você tem reza.
+
+Ontem, enquanto CTOs do mundo inteiro atualizavam o AWS Status Dashboard obsessivamente, duas verdades inconvenientes emergiram:
+
+𝗩𝗲𝗿𝗱𝗮𝗱𝗲 𝟭: 𝗠𝘂𝗹𝘁𝗶-𝗰𝗹𝗼𝘂𝗱 é 𝗺𝗲𝗻𝘁𝗶𝗿𝗮 𝗽𝗮𝗿𝗮 𝟵𝟬% 𝗱𝗮𝘀 𝗲𝗺𝗽𝗿𝗲𝘀𝗮𝘀
+
+76% das empresas globais rodam aplicações na AWS. 48% dos devs usam serviços AWS.
+
+Você montou aquela arquitetura "cloud-agnostic"? 
+Kubernetes pra ter "portabilidade entre clouds"? 
+Terraform "pra migrar rápido se precisar"?
+
+Tudo lindo no papel.
+
+Na prática, quando AWS cai, você não faz failover pra GCP em 5 minutos.
+
+Porque seus dados estão em RDS (AWS). 
+Suas filas estão em SQS (AWS). 
+Seu storage está em S3 (AWS). 
+Suas secrets estão em Secrets Manager (AWS). 
+Seu DNS está em Route53 (AWS).
+
+"Mas temos DR em outra região!"
+
+US-EAST-1 caiu. Sabe o que mais caiu junto? DynamoDB, SQS, EC2, Amazon Connect, serviços regionais que você jurou que eram resilientes.
+
+Multi-cloud não é ter conta na AWS e GCP.
+
+É ter sistemas ativamente replicados e testados em ambos. Em tempo real. Com custo 2-3x maior.
+
+Quantas empresas realmente fazem isso? Menos de 5%.
+
+O resto tem teatro de resiliência.
+
+𝗩𝗲𝗿𝗱𝗮𝗱𝗲 𝟮: 𝗦𝗟𝗔 𝗻ã𝗼 𝗰𝗼𝗺𝗽𝗲𝗻𝘀𝗮 𝗽𝗿𝗲𝗷𝘂í𝘇𝗼 𝗼𝗽𝗲𝗿𝗮𝗰𝗶𝗼𝗻𝗮𝗹
+
+Especialistas jurídicos alertam: SLAs da AWS oferecem créditos nominais que não cobrem perda de receita ou dano reputacional.
+
+Você paga R$ 300 mil/mês pra AWS. 
+Tem SLA de 99.99%. 
+AWS cai por 6 horas.
+
+Seu prejuízo: R$ 4 milhões em vendas perdidas + 200 chamados de clientes + reputação arranhada.
+
+Compensação da AWS: ~R$ 9 mil em crédito. 
+
+Parabéns, você foi indenizado em 0.2% do dano.
+
+E ainda tem CTO falando em "confiança no provedor". Confiança sem contingência é negligência com nome bonito.
+
+Não estou dizendo pra abandonar AWS.
+
+AWS atende 90% das Fortune 100. É parte crítica da infraestrutura moderna.
+
+Estou dizendo que se sua arquitetura assume que AWS nunca cai, você está jogando roleta russa com receita.
+
+Porque não é questão de SE vai cair de novo.
+
+AWS já teve grandes interrupções em 2012 (Netflix no Natal), 2021 (temporada de compras) e junho de 2024 (Lambda). Ontem foi só a mais recente.
+
+É questão de QUANDO.
+
+E a pergunta de centenas de bilhões é: Na próxima vez, vocês vão estar atualizando o Status Dashboard... ou executando o playbook que realmente funciona?
+
+Porque entre esses dois cenários, tem uma palavra:
+
+Receita.
+
+
+````
+![alt text](imagens/amazon.png)
