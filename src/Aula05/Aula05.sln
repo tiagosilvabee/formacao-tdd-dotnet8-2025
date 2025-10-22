@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiSample", "ApiSample", "{AE7D3E41-122E-0BBE-E48E-611C7BF044F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seguradora.API", "ApiSample\Seguradora.API\Seguradora.API.csproj", "{568937D4-062A-0DC2-2EDF-7E71B3A4C95D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{568937D4-062A-0DC2-2EDF-7E71B3A4C95D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{568937D4-062A-0DC2-2EDF-7E71B3A4C95D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{568937D4-062A-0DC2-2EDF-7E71B3A4C95D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{568937D4-062A-0DC2-2EDF-7E71B3A4C95D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{568937D4-062A-0DC2-2EDF-7E71B3A4C95D} = {AE7D3E41-122E-0BBE-E48E-611C7BF044F5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5682E8B4-05C2-461F-801A-4CD3261D5977}
+	EndGlobalSection
+EndGlobal

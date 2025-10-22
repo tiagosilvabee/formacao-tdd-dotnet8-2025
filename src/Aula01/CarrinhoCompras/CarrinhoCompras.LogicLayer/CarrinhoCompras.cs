@@ -24,4 +24,4 @@ public class CarrinhoCompras
         return produtoMaisBarato;
         ///Produtos.Min(x => x.preco);
     }
-}
+}s

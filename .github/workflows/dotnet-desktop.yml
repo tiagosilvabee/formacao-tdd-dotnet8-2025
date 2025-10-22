@@ -1,0 +1,39 @@
+# This workflow was created just to teach how to configure it.
+
+name: .NET Core Desktop
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        solution: ['./src/Aula01/CarrinhoCompras/CarrinhoCompras.sln', './src/Aula02/src/CalculatorSample/TDDExample.sln', './src/Aula02/src/CICDWithTestsSample/MoongyTDD.sln', './src/Aula03/src/BankingApp.sln']
+        # solution: ['./src/Aula01/CarrinhoCompras/CarrinhoCompras.sln', './src/Aula02/src/CalculatorSample/TDDExample.sln', './src/Aula02/src/CICDWithTestsSample/MoongyTDD.sln', './src/Aula03/src/BankingApp.sln', './src/Aula04/src/Aula04.sln', './src/Aula05/Aula05.sln', './src/Aula05/MoqSample/MoqSample.sln', './src/Aula05/TestIntegracao/TestIntegracao.sln']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0.x
+
+    - name: Restore
+      run: dotnet restore ${{ matrix.solution }}        
+
+    - name: Build
+      run: dotnet build ${{ matrix.solution }} --configuration Release --no-restore
+
+    - name: Test
+      run: dotnet test ${{ matrix.solution }} --configuration Release --no-build --verbosity normal
