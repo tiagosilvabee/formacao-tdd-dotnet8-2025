@@ -5,7 +5,7 @@ public class SimpleTests
     [Fact]
     public void Soma_DeveRetornarResultadoCorreto()
     {
-        var resultado = 2 + 3;
+        var resultado = 3 + 2;
         Assert.Equal(5, resultado);
     }
 
