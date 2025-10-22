@@ -14,8 +14,8 @@ Este repositório demonstra um pipeline de integração contínua completo com *
 
 ## 🚀 CI Status
 
-![Build](https://github.com/seu-org/github-actions-ci/actions/workflows/ci.yml/badge.svg)
-![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=seu-org_github-actions-ci&metric=alert_status)
+![Build](https://github.com/tiagosilvabee/formacao-tdd-dotnet8-2025/actions/workflows/ci.yml/badge.svg)
+![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=tiagosilvabee_formacao-tdd-dotnet8-2025&metric=alert_status)
 
 > 🧩 Substitua `seu-org` e `github-actions-ci` pelos valores reais da sua conta no SonarCloud e repositório no GitHub.
 
